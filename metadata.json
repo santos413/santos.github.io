@@ -1,0 +1,6 @@
+{
+  "name": "Neurocircuit Lab",
+  "description": "Plataforma educativa e interactiva de Inteligencia Artificial, Machine Learning y Data Science aplicada a la Ingeniería Electrónica.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEUROCIRCUIT LAB - IA Aplicada a la Ingeniería Electrónica</title>
+  <meta name="description" content="Plataforma educativa e interactiva de Inteligencia Artificial, Machine Learning y Data Science aplicada a la Ingeniería Electrónica. Creada por Santo Miguel Coria Suma.">
+  
+  <!-- OpenGraph Meta Tags -->
+  <meta property="og:title" content="NEUROCIRCUIT LAB - IA Aplicada a la Ingeniería Electrónica">
+  <meta property="og:description" content="Plataforma educativa e interactiva de Inteligencia Artificial, Machine Learning y Data Science aplicada a la Ingeniería Electrónica.">
+  <meta property="og:type" content="website">
+
+  <!-- Estilos Cyberpunk Puro (Sin CDNs ni fuentes externas) -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Canvas interactivo de fondo (Red sináptica / Nodos de circuito) -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- =========================================================
+       BARRA DE NAVEGACIÓN FIJA
+       ========================================================= -->
+  <header class="site-header" id="header">
+    <div class="container nav-inner">
+      <a href="#inicio" class="brand-logo" id="brand-link" aria-label="NeuroCircuit Lab - Ir al inicio">
+        <span class="brand-icon">⚡</span>
+        <span class="brand-text">NEUROCIRCUIT<span>.LAB</span></span>
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-label="Abrir menú de navegación">
+        [☰ Menú]
+      </button>
+
+      <nav aria-label="Navegación principal">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#inicio" class="nav-link active" id="nav-link-inicio">Inicio</a></li>
+          <li><a href="#ia" class="nav-link" id="nav-link-ia">IA</a></li>
+          <li><a href="#ml" class="nav-link" id="nav-link-ml">Machine Learning</a></li>
+          <li><a href="#datascience" class="nav-link" id="nav-link-ds">Ciencia de Datos</a></li>
+          <li><a href="#redes-neuronales" class="nav-link" id="nav-link-nn">Redes Neuronales</a></li>
+          <li><a href="#ia-generativa" class="nav-link" id="nav-link-gen">IA Generativa</a></li>
+          <li><a href="#playground" class="nav-link" id="nav-link-play">Playground</a></li>
+          <li><a href="#dashboard" class="nav-link" id="nav-link-dash">Dashboard</a></li>
+          <li><a href="#ciberseguridad" class="nav-link" id="nav-link-sec">Ciberseguridad</a></li>
+          <li><a href="#aplicaciones" class="nav-link" id="nav-link-app">Aplicaciones</a></li>
+          <li><a href="#herramientas" class="nav-link" id="nav-link-tools">Herramientas</a></li>
+          <li><a href="#etica-futuro" class="nav-link" id="nav-link-etica">Ética y Futuro</a></li>
+          <li><a href="#terminal" class="nav-link" id="nav-link-term">Terminal</a></li>
+          <li><a href="#sobre-mi" class="nav-link" id="nav-link-about">Sobre mí</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- =========================================================
+         SECCIÓN 1: INICIO (HERO)
+         ========================================================= -->
+    <section class="section hero-section" id="inicio">
+      <div class="container">
+        <div class="hero-tag" id="hero-tag-badge">
+          <span>●</span> Plataforma Educativa &amp; Profesional
+        </div>
+        
+        <h1 class="hero-title" id="hero-main-title">
+          <span class="glow-purple">NEUROCIRCUIT</span> <span class="glow-orange">LAB</span>
+        </h1>
+        
+        <p class="hero-subtitle" id="hero-subheading">
+          IA • Machine Learning • Data Science • Ingeniería Electrónica
+        </p>
+        
+        <p class="hero-desc" id="hero-description">
+          Espacio interactivo dedicado a la convergencia entre modelos inteligentes y el hardware: 
+          desde el procesamiento digital de señales y sensores en tiempo real hasta el despliegue de 
+          redes neuronales en sistemas embebidos, IoT, control y telecomunicaciones.
+        </p>
+        
+        <div class="hero-actions" id="hero-button-group">
+          <a href="#ia" class="btn btn-primary" id="hero-btn-explore">
+            Explorar IA →
+          </a>
+          <a href="#playground" class="btn btn-secondary" id="hero-btn-playground">
+            Iniciar Playground ⚙
+          </a>
+        </div>
+
+        <!-- 4 Indicadores animados -->
+        <div class="hero-metrics" id="hero-stats-grid">
+          <div class="metric-card" id="hero-metric-models">
+            <span class="metric-number" data-target-metric="148" data-suffix="+">0</span>
+            <span class="metric-label">Modelos Analizados</span>
+          </div>
+          <div class="metric-card" id="hero-metric-data">
+            <span class="metric-number" data-target-metric="12.8" data-suffix="M">0</span>
+            <span class="metric-label">Datos Procesados (Muestras)</span>
+          </div>
+          <div class="metric-card" id="hero-metric-preds">
+            <span class="metric-number" data-target-metric="98.6" data-suffix="%">0</span>
+            <span class="metric-label">Predicciones Realizadas</span>
+          </div>
+          <div class="metric-card" id="hero-metric-threats">
+            <span class="metric-number" data-target-metric="342" data-suffix="">0</span>
+            <span class="metric-label">Amenazas Detectadas</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECCIÓN 2: INTELIGENCIA ARTIFICIAL
+         ========================================================= -->
+    <section class="section" id="ia">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-tag" id="badge-ia">Fundamentos</span>
+          <h2 class="section-title" id="title-ia">Inteligencia Artificial <span>en la Electrónica</span></h2>
+          <p class="section-subtitle">
+            Pilares conceptuales de la IA y su traslación práctica a circuitos, transductores y lógica programable.
+          </p>
+        </div>
+
+        <div class="card-grid" id="ia-cards-grid">
+          <!-- 1. Qué es la IA -->
+          <article class="glass-card" id="card-ia-intro">
+            <div class="card-icon">🧠</div>
+            <h3 class="card-title">¿Qué es la IA?</h3>
+            <p class="card-desc">
+              Disciplina orientada al desarrollo de algoritmos y arquitecturas capaces de percibir señales del entorno, razonar, aprender y ejecutar acciones óptimas de forma autónoma.
+            </p>
+            <div class="card-example">
+              <strong>Ejemplo en electrónica:</strong>
+              Controladores lógicos inteligentes que regulan la modulación PWM según la carga sin requerir reprogramación manual.
+            </div>
+          </article>
+
+          <!-- 2. Historia y evolución -->
+          <article class="glass-card" id="card-ia-history">
+            <div class="card-icon orange">⏳</div>
+            <h3 class="card-title">Historia y Evolución</h3>
+            <p class="card-desc">
+              Desde las compuertas de relés y el perceptrón de Rosenblatt (1958), pasando por los sistemas expertos de los 80, hasta los aceleradores neuronales (NPU) en silicio actual.
+            </p>
+            <div class="card-example">
+              <strong>Ejemplo en electrónica:</strong>
+              Transición de filtros analógicos pasivos RLC a coprocesadores neuromórficos integrados en chips de bajo consumo.
+            </div>
+          </article>
+
+          <!-- 3. IA Débil vs. Generativa -->
+          <article class="glass-card" id="card-ia-weak-vs-gen">
+            <div class="card-icon">⚖</div>
+            <h3 class="card-title">IA Débil vs. Generativa</h3>
+            <p class="card-desc">
+              La IA débil o específica resuelve tareas cerradas de optimización y clasificación; la generativa sintetiza contenido inédito (código de hardware, señales, topologías).
+            </p>
+            <div class="card-example">
+              <strong>Ejemplo en electrónica:</strong>
+              Débil: detector de umbral de tensión. Generativa: síntesis automática de código VHDL o esquemáticos KiCad.
+            </div>
+          </article>
+
+          <!-- 4. Aprendizaje Automático (ML) -->
+          <article class="glass-card" id="card-ia-ml">
+            <div class="card-icon orange">📊</div>
+            <h3 class="card-title">Aprendizaje Automático</h3>
+            <p class="card-desc">
+              Sistemas que extraen patrones predictivos a partir de conjuntos de datos empíricos de telemetría, mejorando su precisión sin estar explícitamente programados regla por regla.
+            </p>
+            <div class="card-example">
+              <strong>Ejemplo en electrónica:</strong>
+              Calibración automática y linealización de sensores Hall y galgas extensiométricas afectadas por temperatura.
+            </div>
+          </article>
+
+          <!-- 5. Redes Neuronales -->
+          <article class="glass-card" id="card-ia-ann">
+            <div class="card-icon">🕸</div>
+            <h3 class="card-title">Redes Neuronales</h3>
+            <p class="card-desc">
+              Estructuras compuestas por capas de nodos interconectados con funciones de activación no lineales capaces de mapear relaciones complejas de entrada-salida.
+            </p>
+            <div class="card-example">
+              <strong>Ejemplo en electrónica:</strong>
+              Modelado de componentes no lineales como inductores saturables y diodos Varicap en radiofrecuencia.
+            </div>
+          </article>
+
+          <!-- 6. NLP -->
+          <article class="glass-card" id="card-ia-nlp">
+            <div class="card-icon orange">💬</div>
+            <h3 class="card-title">Procesamiento de Lenguaje (NLP)</h3>
+            <p class="card-desc">
+              Interpretación semántica de lenguaje humano aplicada a la interacción hombre-máquina y la extracción de información técnica de manuales de componentes y datasheets.
+            </p>
+            <div class="card-example">
+              <strong>Ejemplo en electrónica:</strong>
+              Comandos por voz procesados en el borde (Edge AI) en sistemas SCADA y consolas de instrumentación médica.
+            </div>
+          </article>
+
+          <!-- 7. Visión por Computadora -->
+          <article class="glass-card" id="card-ia-cv">
+            <div class="card-icon">👁</div>
+            <h3 class="card-title">Visión por Computadora</h3>
+            <p class="card-desc">
+              Adquisición, procesamiento y clasificación de imágenes ópticas o térmicas para detección y segmentación de objetos en tiempo real.
+            </p>
+            <div class="card-example">
+              <strong>Ejemplo en electrónica:</strong>
+              Inspección óptica automatizada (AOI) de placas PCB: soldaduras frías, puentes de estaño y chips SMD invertidos.
+            </div>
+          </article>
+
+          <!-- 8. Agentes Inteligentes -->
+          <article class="glass-card" id="card-ia-agents">
+            <div class="card-icon orange">🤖</div>
+            <h3 class="card-title">Agentes Inteligentes</h3>
+            <p class="card-desc">
+              Entidades autónomas con sensores y actuadores que perciben el estado del sistema y ejecutan acciones óptimas guiadas por funciones de recompensa o control adaptable.
+            </p>
+            <div class="card-example">
+              <strong>Ejemplo en electrónica:</strong>
+              Gestión inteligente del flujo de potencia en microrredes fotovoltaicas y balanceo dinámico de baterías Li-Ion.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECCIÓN 3: MACHINE LEARNING
+         ========================================================= -->
+    <section class="section" id="ml">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-tag orange" id="badge-ml">Entrenamiento e Inferencia</span>
+          <h2 class="section-title" id="title-ml">Machine Learning <span>en Sensores y Señales</span></h2>
+          <p class="section-subtitle">
+            Paradigmas de aprendizaje y su aplicación en la predicción de fallas de componentes electrónicos.
+          </p>
+        </div>
+
+        <div class="ml-paradigm-grid" id="ml-paradigms-container">
+          <!-- Supervisado -->
+          <div class="paradigm-card" id="paradigm-supervised">
+            <span class="paradigm-pill">[ Supervisado ]</span>
+            <h3 class="card-title">Datos Etiquetados</h3>
+            <p class="card-desc">
+              El modelo aprende la función $f(X) \to Y$ a partir de pares de entrada-salida históricos previamente catalogados.
+            </p>
+            <div class="card-example">
+              <strong>Electrónica:</strong> Clasificación de fallas en transistores MOSFET (estado normal vs sobretemperatura o cortocircuito).
+            </div>
+          </div>
+
+          <!-- No supervisado -->
+          <div class="paradigm-card" id="paradigm-unsupervised">
+            <span class="paradigm-pill">[ No Supervisado ]</span>
+            <h3 class="card-title">Descubrimiento de Patrones</h3>
+            <p class="card-desc">
+              Identifica agrupaciones y anomalías intrínsecas en los datos sin requerir etiquetas de entrenamiento previas.
+            </p>
+            <div class="card-example">
+              <strong>Electrónica:</strong> Clustering de perfiles de consumo energético en redes de sensores inalámbricos (WSN).
+            </div>
+          </div>
+
+          <!-- Por refuerzo -->
+          <div class="paradigm-card" id="paradigm-reinforcement">
+            <span class="paradigm-pill">[ Por Refuerzo ]</span>
+            <h3 class="card-title">Agente y Recompensa</h3>
+            <div class="reinforce-diagram">
+              <span>Agente</span> → <span>Acción</span> → <span>Entorno</span> → <span>Recompensa</span>
+            </div>
+            <p class="card-desc">
+              Aprende mediante ensayo y error maximizando una señal de beneficio escalar en tiempo de ejecución.
+            </p>
+            <div class="card-example">
+              <strong>Electrónica:</strong> Sintonización en línea de parámetros PID en servomotores y robots manipuladores.
+            </div>
+          </div>
+        </div>
+
+        <!-- DEMO INTERACTIVA CON SLIDERS -->
+        <div class="demo-box" id="ml-demo-container">
+          <div class="demo-header">
+            <h3 class="demo-title">
+              <span>⚡</span> Demo de Inferencia: Predicción de Fallo Térmico de Sensor / Transistor
+            </h3>
+            <span class="badge-tag">Simulación Local</span>
+          </div>
+
+          <div class="demo-grid-controls">
+            <!-- Controles de entrada -->
+            <div id="ml-controls-col">
+              <div class="control-group">
+                <label for="ml-param-voltage" class="control-label">
+                  <span>Tensión de Operación (V_in):</span>
+                  <span class="control-value" id="ml-val-voltage">12.0 V</span>
+                </label>
+                <input type="range" id="ml-param-voltage" class="slider-input" min="3" max="24" step="0.5" value="12">
+              </div>
+
+              <div class="control-group">
+                <label for="ml-param-freq" class="control-label">
+                  <span>Frecuencia de Conmutación PWM (f_sw):</span>
+                  <span class="control-value" id="ml-val-freq">100 kHz</span>
+                </label>
+                <input type="range" id="ml-param-freq" class="slider-input" min="10" max="250" step="5" value="100">
+              </div>
+
+              <div class="control-group">
+                <label for="ml-param-duty" class="control-label">
+                  <span>Ciclo de Trabajo (Duty Cycle D):</span>
+                  <span class="control-value" id="ml-val-duty">50 %</span>
+                </label>
+                <input type="range" id="ml-param-duty" class="slider-input" min="10" max="95" step="1" value="50">
+              </div>
+
+              <div class="control-group">
+                <label for="ml-param-temp" class="control-label">
+                  <span>Temperatura Ambiental (T_amb):</span>
+                  <span class="control-value" id="ml-val-temp">30 °C</span>
+                </label>
+                <input type="range" id="ml-param-temp" class="slider-input" min="15" max="85" step="1" value="30">
+              </div>
+            </div>
+
+            <!-- Panel de Predicción en Vivo -->
+            <div class="prediction-panel" id="ml-prediction-results">
+              <div class="status-badge normal" id="ml-status-badge">
+                ● ESTADO: OPERACIÓN ÓPTIMA
+              </div>
+
+              <div style="margin-bottom: 14px;">
+                <div class="control-label">
+                  <span>Probabilidad de Falla del Componente:</span>
+                  <span class="control-value" id="ml-fail-prob-text">24.5%</span>
+                </div>
+                <div class="meter-bar-wrapper">
+                  <div class="meter-bar-fill" id="ml-fail-prob-bar" style="width: 24.5%;"></div>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 12px; font-size: 0.9rem;">
+                <span style="color: var(--text-muted);">Tiempo Medio Entre Fallas Estimado (MTBF):</span>
+                <strong style="color: #fff; font-family: var(--font-mono);" id="ml-mtbf-text">42,500 horas</strong>
+              </div>
+
+              <p class="card-example" id="ml-diag-text" style="margin-top: 8px;">
+                Margen de disipación seguro. Conmutación en zona SOA (Safe Operating Area). Rendimiento electromagnético estable.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECCIÓN 4: CIENCIA DE DATOS
+         ========================================================= -->
+    <section class="section" id="datascience">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-tag" id="badge-ds">Flujo de Extracción y Análisis</span>
+          <h2 class="section-title" id="title-ds">Ciencia de Datos <span>en Señales Analógicas y Digitales</span></h2>
+          <p class="section-subtitle">
+            Del transductor a la toma de decisiones: etapas metódicas para transformar ruido físico en conocimiento estructurado.
+          </p>
+        </div>
+
+        <!-- Flujo Datos -> Decisión -->
+        <div class="data-flow-steps" id="ds-steps-container">
+          <div class="step-card" id="step-1">
+            <span class="step-number">01</span>
+            <div class="step-name">Datos</div>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Adquisición ADC / Sensores</p>
+          </div>
+          <div class="step-card" id="step-2">
+            <span class="step-number">02</span>
+            <div class="step-name">Limpieza</div>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Filtros anti-ruido y outliers</p>
+          </div>
+          <div class="step-card" id="step-3">
+            <span class="step-number">03</span>
+            <div class="step-name">Exploración</div>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">FFT y correlación temporal</p>
+          </div>
+          <div class="step-card" id="step-4">
+            <span class="step-number">04</span>
+            <div class="step-name">Análisis</div>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Extracción de características</p>
+          </div>
+          <div class="step-card" id="step-5">
+            <span class="step-number">05</span>
+            <div class="step-name">Modelo</div>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Regresión o clasificador</p>
+          </div>
+          <div class="step-card" id="step-6">
+            <span class="step-number">06</span>
+            <div class="step-name">Visualización</div>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Telemetría y gráficos</p>
+          </div>
+          <div class="step-card" id="step-7">
+            <span class="step-number">07</span>
+            <div class="step-name">Decisión</div>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Acción de control en actuador</p>
+          </div>
+        </div>
+
+        <!-- DEMO MINI SEÑAL CON RUIDO Y FILTRO DIGITAL -->
+        <div class="demo-box" id="ds-demo-container">
+          <div class="demo-header">
+            <h3 class="demo-title">
+              <span>〰</span> Mini Demo: Filtrado Digital de Señal de Sensor Ruidosa
+            </h3>
+            <div style="font-family: var(--font-mono); font-size: 0.85rem;">
+              <span id="ds-filter-status" style="color: var(--accent-orange);">Sin filtrar (Señal cruda)</span>
+              | SNR: <span id="ds-snr-val" style="color: #00e5ff;">24 dB</span>
+            </div>
+          </div>
+
+          <div class="canvas-container" id="ds-canvas-wrapper" style="margin-bottom: 20px;">
+            <canvas id="signal-canvas" aria-label="Visualizador de señal de sensor con ruido y filtrado digital"></canvas>
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+            <div style="display: flex; align-items: center; gap: 16px; flex: 1; min-width: 260px;">
+              <label for="ds-noise-slider" style="font-size: 0.9rem; color: var(--text-secondary); white-space: nowrap;">
+                Nivel de Ruido EMI: <strong id="ds-noise-val" style="color: var(--accent-orange-light);">35%</strong>
+              </label>
+              <input type="range" id="ds-noise-slider" class="slider-input" min="5" max="95" value="35">
+            </div>
+
+            <div style="display: flex; gap: 12px;">
+              <button class="btn btn-primary btn-sm" id="ds-filter-btn">
+                Aplicar filtro (Media móvil)
+              </button>
+              <button class="btn btn-secondary btn-sm" id="ds-reset-btn">
+                Regenerar Señal
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECCIÓN 5: REDES NEURONALES
+         ========================================================= -->
+    <section class="section" id="redes-neuronales">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-tag orange" id="badge-nn">Topologías de Inferencia</span>
+          <h2 class="section-title" id="title-nn">Redes Neuronales <span>Artificiales (ANN)</span></h2>
+          <p class="section-subtitle">
+            Visualizador topológico interactivo: Entradas → Capas Ocultas con pesos sinápticos → Salida de decisión.
+          </p>
+        </div>
+
+        <div class="demo-box" id="nn-viewer-container">
+          <div class="nn-layout">
+            <!-- Controles de topología -->
+            <div class="nn-controls" id="nn-controls-panel">
+              <h4 style="font-size: 1.05rem; margin-bottom: 16px; color: var(--text-primary); border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px;">
+                ⚙ Parámetros de Red
+              </h4>
+
+              <div class="control-group">
+                <label for="nn-input-count" class="control-label">
+                  <span>Neuronas de Entrada:</span>
+                  <span class="control-value" id="nn-input-val">3</span>
+                </label>
+                <input type="range" id="nn-input-count" class="slider-input" min="2" max="6" value="3">
+              </div>
+
+              <div class="control-group">
+                <label for="nn-layers-count" class="control-label">
+                  <span>Capas Ocultas:</span>
+                  <span class="control-value" id="nn-layers-val">2</span>
+                </label>
+                <input type="range" id="nn-layers-count" class="slider-input" min="1" max="4" value="2">
+              </div>
+
+              <div class="control-group">
+                <label for="nn-neurons-count" class="control-label">
+                  <span>Neuronas / Capa Oculta:</span>
+                  <span class="control-value" id="nn-neurons-val">4</span>
+                </label>
+                <input type="range" id="nn-neurons-count" class="slider-input" min="2" max="8" value="4">
+              </div>
+
+              <div class="control-group">
+                <label for="nn-output-count" class="control-label">
+                  <span>Neuronas de Salida:</span>
+                  <span class="control-value" id="nn-output-val">2</span>
+                </label>
+                <input type="range" id="nn-output-count" class="slider-input" min="1" max="4" value="2">
+              </div>
+
+              <button class="btn btn-primary" id="nn-propagate-btn" style="width: 100%; margin-top: 10px;">
+                Propagar Señal ⚡
+              </button>
+            </div>
+
+            <!-- Canvas de la red -->
+            <div>
+              <div class="nn-canvas-box" id="nn-canvas-wrapper">
+                <canvas id="nn-canvas" aria-label="Visualizador gráfico interactivo de la red neuronal"></canvas>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
+                <span id="nn-output-log">Salida: Esperando pulso de propagación...</span>
+                <span>Nodos neón: Entrada [Naranja] | Ocultas [Morado] | Salida [Cyan]</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECCIÓN 6: IA GENERATIVA
+         ========================================================= -->
+    <section class="section" id="ia-generativa">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-tag" id="badge-gen">Modelos de Lenguaje &amp; Síntesis</span>
+          <h2 class="section-title" id="title-gen">IA Generativa <span>en la Ingeniería</span></h2>
+          <p class="section-subtitle">
+            Texto, imágenes, código para firmware, audio, modelos de lenguaje (LLM) y multimodalidad aplicados al diseño de sistemas electrónicos.
+          </p>
+        </div>
+
+        <div class="card-grid" style="margin-bottom: 30px;" id="gen-modalities-grid">
+          <div class="glass-card" id="gen-code">
+            <h4 class="card-title">Código y Firmware</h4>
+            <p class="card-desc">Generación de controladores I2C, SPI, UART, drivers de periféricos y rutinas en C/C++ y VHDL.</p>
+          </div>
+          <div class="glass-card" id="gen-multimodal">
+            <h4 class="card-title">Multimodalidad</h4>
+            <p class="card-desc">Análisis simultáneo de diagramas de circuitos en imagen y registros de telemetría de osciloscopio.</p>
+          </div>
+          <div class="glass-card" id="gen-audio-signal">
+            <h4 class="card-title">Audio &amp; Señales</h4>
+            <p class="card-desc">Síntesis de ondas acústicas de prueba y cancelación adaptativa de ruido con redes neuronales generativas.</p>
+          </div>
+        </div>
+
+        <!-- DEMO SIMULADA TYPEWRITER -->
+        <div class="demo-box" id="gen-demo-container">
+          <div class="demo-header">
+            <h3 class="demo-title">
+              <span>⌨</span> Demo Simulada en JavaScript: Generador de Soluciones de Ingeniería
+            </h3>
+            <span class="badge-tag orange">Sin llamadas externas a APIs</span>
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <label for="gen-prompt-select" style="display: block; font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 8px;">
+              Selecciona una tarea de ingeniería electrónica a resolver:
+            </label>
+            <select id="gen-prompt-select" class="gen-prompt-select">
+              <option value="firmware">1. Generar Firmware: Driver ESP32 con Filtro Digital IIR para Sensor I2C</option>
+              <option value="spectral">2. Diagnóstico Espectral: Análisis de armónicos y estabilidad de potencia PWM</option>
+              <option value="schematic">3. Diseño Esquemático: Acondicionamiento para Termopar Tipo K con AD620</option>
+              <option value="tinyml">4. Arquitectura TinyML: Modelo cuantizado INT8 para microcontrolador Cortex-M4</option>
+            </select>
+          </div>
+
+          <div style="display: flex; gap: 12px; margin-bottom: 16px;">
+            <button class="btn btn-primary btn-sm" id="gen-run-btn">
+              Generar respuesta simulada ▶
+            </button>
+            <button class="btn btn-secondary btn-sm" id="gen-clear-btn">
+              Limpiar pantalla
+            </button>
+          </div>
+
+          <div class="terminal-typewriter" id="gen-output-box" tabindex="0" aria-label="Área de salida del texto generado">
+// Presiona "Generar respuesta simulada" para iniciar la inferencia...
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECCIÓN 7: PLAYGROUND
+         ========================================================= -->
+    <section class="section" id="playground">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-tag orange" id="badge-play">Laboratorio Interactivo</span>
+          <h2 class="section-title" id="title-play">Playground <span>de Simulación</span></h2>
+          <p class="section-subtitle">
+            Experimenta en tiempo real con 4 tareas clave de Machine Learning sin recargar la página.
+          </p>
+        </div>
+
+        <div class="demo-box" id="playground-box">
+          <nav class="tabs-nav" aria-label="Pestañas del playground">
+            <button class="tab-btn active" data-tab="tab-clasificacion" id="tab-btn-clasificacion">
+              Clasificación de Componentes
+            </button>
+            <button class="tab-btn" data-tab="tab-prediccion" id="tab-btn-prediccion">
+              Predicción de Consumo
+            </button>
+            <button class="tab-btn" data-tab="tab-clustering" id="tab-btn-clustering">
+              Clustering K-Means 2D
+            </button>
+            <button class="tab-btn" data-tab="tab-generacion" id="tab-btn-generacion">
+              Generador de Telemetría
+            </button>
+          </nav>
+
+          <!-- Pestaña 1: Clasificación -->
+          <div class="tab-panel active" id="tab-clasificacion">
+            <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 10px;">
+              Clasificación de Calidad y Grado en Resistencias y Sensores
+            </h4>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+              Ajusta la tolerancia porcentual y la deriva térmica por temperatura (ppm/°C) para evaluar si el lote cumple con grado médico, industrial o es rechazado.
+            </p>
+
+            <div class="demo-grid-controls">
+              <div>
+                <div class="control-group">
+                  <label for="play-res-slider" class="control-label">
+                    <span>Tolerancia de Resistencia:</span>
+                    <span class="control-value" id="play-res-val">± 1.0 %</span>
+                  </label>
+                  <input type="range" id="play-res-slider" class="slider-input" min="0.1" max="10" step="0.1" value="1.0">
+                </div>
+
+                <div class="control-group">
+                  <label for="play-temp-slider" class="control-label">
+                    <span>Deriva Térmica:</span>
+                    <span class="control-value" id="play-temp-val">50 ppm/°C</span>
+                  </label>
+                  <input type="range" id="play-temp-slider" class="slider-input" min="10" max="350" step="5" value="50">
+                </div>
+              </div>
+
+              <div class="prediction-panel">
+                <span style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">Resultado del Clasificador:</span>
+                <div class="status-badge normal" id="play-class-result">
+                  ● GRADO MILITAR / MÉDICO (Alta precisión)
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 10px;">
+                  El modelo evalúa la dispersión gaussiana esperada en condiciones de estrés operacional.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pestaña 2: Predicción -->
+          <div class="tab-panel" id="tab-prediccion">
+            <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 10px;">
+              Regresión: Predicción del Consumo Dinámico de Corriente en Microcontroladores
+            </h4>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+              Relación linealizada $I = C \cdot V^2 \cdot f_{clk} + I_{leak}$.
+            </p>
+
+            <div class="demo-grid-controls">
+              <div>
+                <div class="control-group">
+                  <label for="play-clock-slider" class="control-label">
+                    <span>Frecuencia de Reloj Núcleo (Clock):</span>
+                    <span class="control-value" id="play-clock-val">84 MHz</span>
+                  </label>
+                  <input type="range" id="play-clock-slider" class="slider-input" min="8" max="240" step="2" value="84">
+                </div>
+              </div>
+
+              <div class="prediction-panel">
+                <span style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">Consumo de Corriente Previsto (@ 3.3V):</span>
+                <div style="font-family: var(--font-mono); font-size: 1.6rem; color: var(--accent-orange); font-weight: 700;" id="play-power-result">
+                  28.9 mA (95.4 mW)
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 10px;">
+                  Útil para calcular la autonomía esperada de baterías LiPo en nodos remotos de IoT.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pestaña 3: Clustering -->
+          <div class="tab-panel" id="tab-clustering">
+            <h4 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 10px;">
+              Agrupamiento K-Means 2D: Perfiles de Sensores en Campo
+            </h4>
+            <div class="canvas-container" style="height: 240px; margin-bottom: 16px;">
+              <canvas id="play-cluster-canvas" aria-label="Visualizador 2D de clusters y centroides"></canvas>
+            </div>
+            <div style="display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+              <span style="font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-mono);">
+                3 Clústeres: Naranja [Normal] | Morado [Transitorio] | Cyan [Fugas]
+              </span>
+              <div style="display: flex; gap: 10px;">
+                <button class="btn btn-primary btn-sm" id="play-cluster-btn">Iterar K-Means ⟳</button>
+                <button class="btn btn-secondary btn-sm" id="play-cluster-reset">Reiniciar Datos</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pestaña 4: Generación de Datos -->
+          <div class="tab-panel" id="tab-generacion">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 10px;">
+              <div>
+                <h4 style="font-size: 1.1rem; color: var(--text-primary);">Generador Sintético de Telemetría IoT</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Simula tramas JSON/CSV recibidas por interfaz serial.</p>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span class="badge-tag" id="play-data-count">4 muestras generadas</span>
+                <button class="btn btn-primary btn-sm" id="play-gen-data-btn">Generar Lote (+4)</button>
+              </div>
+            </div>
+
+            <div style="overflow-x: auto; background: rgba(13, 10, 20, 0.9); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);">
+              <table style="width: 100%; border-collapse: collapse; text-align: left;" id="play-data-table">
+                <thead>
+                  <tr style="border-bottom: 1px solid var(--border-medium); font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-purple-light);">
+                    <th style="padding: 10px 8px;">TIMESTAMP</th>
+                    <th style="padding: 10px 8px;">NODO</th>
+                    <th style="padding: 10px 8px;">TEMPERATURA</th>
+                    <th style="padding: 10px 8px;">HUMEDAD</th>
+                    <th style="padding: 10px 8px;">TENSIÓN V</th>
+                    <th style="padding: 10px 8px;">RSSI</th>
+                  </tr>
+                </thead>
+                <tbody id="play-data-table-body">
+                  <!-- Filas dinámicas -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECCIÓN 8: DASHBOARD
+         ========================================================= -->
+    <section class="section" id="dashboard">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-tag" id="badge-dash">Supervisión en Tiempo Real</span>
+          <h2 class="section-title" id="title-dash">Dashboard <span>de Telemetría Viva</span></h2>
+          <p class="section-subtitle">
+            Indicadores de sistema y 4 visualizadores dinámicos con datos simulados actualizados periódicamente.
+          </p>
+        </div>
+
+        <!-- Indicadores superiores -->
+        <div class="dash-metrics-bar" id="dash-metrics-container">
+          <div class="metric-card" id="dash-metric-datasets">
+            <span class="metric-number" style="font-size: 1.4rem;">48</span>
+            <span class="metric-label">Datasets Cargados</span>
+          </div>
+          <div class="metric-card" id="dash-metric-active-models">
+            <span class="metric-number" style="font-size: 1.4rem;">6</span>
+            <span class="metric-label">Modelos Activos</span>
+          </div>
+          <div class="metric-card" id="dash-metric-pps">
+            <span class="metric-number" style="font-size: 1.4rem;">1,240</span>
+            <span class="metric-label">Predicciones / seg</span>
+          </div>
+          <div class="metric-card" id="dash-metric-accuracy">
+            <span class="metric-number" style="font-size: 1.4rem; color: #10b981;">98.4%</span>
+            <span class="metric-label">Precisión Promedio</span>
+          </div>
+          <div class="metric-card" id="dash-metric-processed">
+            <span class="metric-number" style="font-size: 1.4rem; color: var(--accent-orange-light);">14.2M</span>
+            <span class="metric-label">Muestras Procesadas</span>
+          </div>
+        </div>
+
+        <!-- 4 Gráficos Canvas dinámicos -->
+        <div class="dash-chart-grid" id="dash-charts-container">
+          <!-- Gráfico 1: Líneas -->
+          <div class="chart-card" id="chart-lines-card">
+            <div class="chart-title">
+              <span>📈 Tensión Vbus en Tiempo Real (V)</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-orange);">Nominal: 12.0 V</span>
+            </div>
+            <div style="height: 180px;">
+              <canvas id="dash-line-canvas" aria-label="Gráfico de líneas de tensión temporal"></canvas>
+            </div>
+          </div>
+
+          <!-- Gráfico 2: Barras -->
+          <div class="chart-card" id="chart-bars-card">
+            <div class="chart-title">
+              <span>📊 Distribución de Fallas por Componente</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-purple-light);">Historial 30 días</span>
+            </div>
+            <div style="height: 180px;">
+              <canvas id="dash-bar-canvas" aria-label="Gráfico de barras de fallas por componente"></canvas>
+            </div>
+          </div>
+
+          <!-- Gráfico 3: Circular / Donut -->
+          <div class="chart-card" id="chart-donut-card">
+            <div class="chart-title">
+              <span>🍩 Clasificación de Estado en Red</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #10b981;">65% Normal</span>
+            </div>
+            <div style="height: 180px;">
+              <canvas id="dash-donut-canvas" aria-label="Gráfico circular de estado de la red"></canvas>
+            </div>
+          </div>
+
+          <!-- Gráfico 4: Dispersión -->
+          <div class="chart-card" id="chart-scatter-card">
+            <div class="chart-title">
+              <span>⁘ Dispersión: Vibración (g) vs Temperatura (°C)</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #00e5ff;">Anomalías en Rojo</span>
+            </div>
+            <div style="height: 180px;">
+              <canvas id="dash-scatter-canvas" aria-label="Gráfico de dispersión vibración contra temperatura"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECCIÓN 9: CIBERSEGURIDAD
+         ========================================================= -->
+    <section class="section" id="ciberseguridad">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-tag orange" id="badge-sec">Seguridad en Edge &amp; Redes Embebidas</span>
+          <h2 class="section-title" id="title-sec">Ciberseguridad <span>en Dispositivos IoT</span></h2>
+          <p class="section-subtitle">
+            Detección inteligente de anomalías de red, intrusiones en buses industriales (CAN, Modbus, MQTT) y protección de firmware embebido.
+          </p>
+        </div>
+
+        <div class="demo-box" id="security-demo-box">
+          <!-- Flujo: TRÁFICO DE RED -> ANÁLISIS IA -> DETECCIÓN -> ALERTA -->
+          <div class="security-flow" id="sec-pipeline-flow">
+            <div class="sec-node" id="sec-traffic-status">
+              TRÁFICO DE RED (MQTT / Bus CAN)
+            </div>
+            <div class="sec-arrow">➔</div>
+            <div class="sec-node" id="sec-ai-status">
+              ANÁLISIS IA (Autoencoder)
+            </div>
+            <div class="sec-arrow">➔</div>
+            <div class="sec-node" id="sec-detection-status">
+              DETECCIÓN (Firma / Vector)
+            </div>
+            <div class="sec-arrow">➔</div>
+            <div class="sec-node status-badge normal" id="sec-alert-status">
+              ALERTA (Seguro)
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
+            <button class="btn btn-secondary btn-sm" id="sec-btn-normal">
+              Inyectar Tráfico Normal (MQTT)
+            </button>
+            <button class="btn btn-primary btn-sm" id="sec-btn-attack">
+              Simular Ataque DDoS en Broker
+            </button>
+            <button class="btn btn-secondary btn-sm" id="sec-btn-mitm">
+              Simular Inyección en Bus CAN
+            </button>
+          </div>
+
+          <div style="background: #090610; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 14px; font-family: var(--font-mono); font-size: 0.85rem;" id="sec-log-box">
+            <div style="color: #10b981;">[SISTEMA LISTO] Motor de detección de anomalías de borde activo. Monitoreando tráfico en interfaces de red.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECCIÓN 10: APLICACIONES
+         ========================================================= -->
+    <section class="section" id="aplicaciones">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-tag" id="badge-app">Impacto en la Industria y la Sociedad</span>
+          <h2 class="section-title" id="title-app">Aplicaciones <span>por Sector</span></h2>
+          <p class="section-subtitle">
+            Comenzando con la ingeniería electrónica como núcleo fundacional, expandiéndose hacia diversas áreas de la ciencia y la economía.
+          </p>
+        </div>
+
+        <!-- 7 Tarjetas de Electrónica primero -->
+        <h3 style="font-size: 1.25rem; color: var(--accent-orange-light); margin-bottom: 20px; font-family: var(--font-mono);">
+          [ ⚡ Sector Núcleo: Ingeniería Electrónica ]
+        </h3>
+
+        <div class="card-grid" style="margin-bottom: 48px;" id="app-electronics-grid">
+          <article class="glass-card" id="app-sensors">
+            <div class="card-icon orange">📡</div>
+            <h4 class="card-title">Sensores e IoT</h4>
+            <p class="card-desc">Transductores inteligentes con auto-calibración y compensación de no-linealidades mediante redes neuronales de borde.</p>
+            <div class="card-example">
+              <strong>Ejemplo práctico:</strong>
+              Sensor de gas MEMS que discrimina entre monóxido de carbono y alcohol etílico mediante análisis multivariable.
+            </div>
+          </article>
+
+          <article class="glass-card" id="app-dsp">
+            <div class="card-icon">〰</div>
+            <h4 class="card-title">Procesamiento Digital de Señales (DSP)</h4>
+            <p class="card-desc">Filtrado adaptativo no lineal, separación ciega de fuentes y deconvolución espectral en tiempo real.</p>
+            <div class="card-example">
+              <strong>Ejemplo práctico:</strong>
+              Cancelación activa de ruido acústico en audífonos digitales procesando señales a 48 kHz en microcontroladores DSP.
+            </div>
+          </article>
+
+          <article class="glass-card" id="app-tinyml">
+            <div class="card-icon orange">🔬</div>
+            <h4 class="card-title">Sistemas Embebidos y TinyML</h4>
+            <p class="card-desc">Inferencia de modelos de aprendizaje automático en microcontroladores con menos de 64 KB de memoria SRAM.</p>
+            <div class="card-example">
+              <strong>Ejemplo práctico:</strong>
+              Reconocimiento de palabras clave de activación por voz (Keyword Spotting) en chip ARM Cortex-M0+ a 30 µW.
+            </div>
+          </article>
+
+          <article class="glass-card" id="app-control">
+            <div class="card-icon">🕹</div>
+            <h4 class="card-title">Control y Robótica</h4>
+            <p class="card-desc">Controladores neuronales adaptables que reemplazan la sintonización clásica ante dinámicas desconocidas o cambiantes.</p>
+            <div class="card-example">
+              <strong>Ejemplo práctico:</strong>
+              Control predictivo basado en modelo (MPC-ANN) para estabilizar vehículos aéreos no tripulados (drones) ante ráfagas de viento.
+            </div>
+          </article>
+
+          <article class="glass-card" id="app-mantenimiento">
+            <div class="card-icon orange">🛠</div>
+            <h4 class="card-title">Mantenimiento Predictivo</h4>
+            <p class="card-desc">Diagnóstico temprano de fatiga mecánica y degradación dieléctrica antes de que ocurra la detención del proceso.</p>
+            <div class="card-example">
+              <strong>Ejemplo práctico:</strong>
+              Monitoreo de corriente de línea en motores de inducción (MCSA) para detectar barras de rotor rotas.
+            </div>
+          </article>
+
+          <article class="glass-card" id="app-telecom">
+            <div class="card-icon">📶</div>
+            <h4 class="card-title">Telecomunicaciones</h4>
+            <p class="card-desc">Ecualización de canal de RF, conformación de haces en antenas MIMO masivas y asignación dinámica de espectro.</p>
+            <div class="card-example">
+              <strong>Ejemplo práctico:</strong>
+              Algoritmo de aprendizaje por refuerzo en estaciones base 5G para mitigar desvanecimiento multicamino (fading).
+            </div>
+          </article>
+
+          <article class="glass-card" id="app-smartgrids">
+            <div class="card-icon orange">💡</div>
+            <h4 class="card-title">Redes Eléctricas Inteligentes (Smart Grids)</h4>
+            <p class="card-desc">Pronóstico de demanda energética, integración de generación solar y protección diferencial inteligente.</p>
+            <div class="card-example">
+              <strong>Ejemplo práctico:</strong>
+              Detección y aislamiento de fallas de arco en inversores fotovoltaicos en menos de 10 milisegundos.
+            </div>
+          </article>
+        </div>
+
+        <!-- 8 Tarjetas de Sectores complementarios -->
+        <h3 style="font-size: 1.25rem; color: var(--accent-purple-light); margin-bottom: 20px; font-family: var(--font-mono);">
+          [ 🌐 Sectores Complementarios ]
+        </h3>
+
+        <div class="card-grid" id="app-broader-grid">
+          <article class="glass-card" id="app-medicina">
+            <h4 class="card-title">Medicina</h4>
+            <p class="card-desc">Procesamiento de bioseñales (ECG, EEG) e instrumentación de diagnóstico por imagen.</p>
+            <div class="card-example"><strong>Ejemplo:</strong> Monitor Holter con detección en tiempo real de fibrilación auricular.</div>
+          </article>
+
+          <article class="glass-card" id="app-educacion">
+            <h4 class="card-title">Educación</h4>
+            <p class="card-desc">Tutoría interactiva personalizada para laboratorios de circuitos y resolución guiada de problemas matemáticos.</p>
+            <div class="card-example"><strong>Ejemplo:</strong> Simuladores de laboratorio con retroalimentación en tiempo real.</div>
+          </article>
+
+          <article class="glass-card" id="app-finanzas">
+            <h4 class="card-title">Finanzas</h4>
+            <p class="card-desc">Algoritmos de detección de transacciones sospechosas y modelado de series temporales de volatilidad.</p>
+            <div class="card-example"><strong>Ejemplo:</strong> Redes neuronales recurrentes para estimar riesgo crediticio.</div>
+          </article>
+
+          <article class="glass-card" id="app-industria">
+            <h4 class="card-title">Industria 4.0</h4>
+            <p class="card-desc">Automatización de celdas de manufactura con gemelos digitales y visión artificial en líneas de montaje.</p>
+            <div class="card-example"><strong>Ejemplo:</strong> Clasificación y descarte automatizado de piezas defectuosas en fajas transportadoras.</div>
+          </article>
+
+          <article class="glass-card" id="app-agricultura">
+            <h4 class="card-title">Agricultura</h4>
+            <p class="card-desc">Riego de precisión gobernado por sensores de humedad de suelo e índices multiespectrales de vegetación.</p>
+            <div class="card-example"><strong>Ejemplo:</strong> Dosificación de fertilizante variable controlada por microcontrolador y GPS.</div>
+          </article>
+
+          <article class="glass-card" id="app-transporte">
+            <h4 class="card-title">Transporte</h4>
+            <p class="card-desc">Sistemas avanzados de asistencia a la conducción (ADAS), LiDAR y control de trenes de tracción eléctrica.</p>
+            <div class="card-example"><strong>Ejemplo:</strong> Frenado autónomo de emergencia por fusión de radar de ondas milimétricas y cámara.</div>
+          </article>
+
+          <article class="glass-card" id="app-ciber">
+            <h4 class="card-title">Ciberseguridad</h4>
+            <p class="card-desc">Sistemas de prevención de intrusiones (IPS) analizando telemetría de paquetes y firmas de malware polimórfico.</p>
+            <div class="card-example"><strong>Ejemplo:</strong> Detección de ataques de fuerza bruta en protocolos SCADA industriales.</div>
+          </article>
+
+          <article class="glass-card" id="app-marketing">
+            <h4 class="card-title">Marketing</h4>
+            <p class="card-desc">Análisis de sentimientos de usuarios y motores de recomendación basados en filtrado colaborativo.</p>
+            <div class="card-example"><strong>Ejemplo:</strong> Predicción de retención de clientes mediante modelos de gradiente boosting.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECCIÓN 11: HERRAMIENTAS
+         ========================================================= -->
+    <section class="section" id="herramientas">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-tag orange" id="badge-tools">Ecosistema Tecnológico</span>
+          <h2 class="section-title" id="title-tools">Herramientas <span>de Software y Hardware</span></h2>
+          <p class="section-subtitle">
+            Lenguajes, librerías y plataformas de cómputo para el desarrollo integral de soluciones inteligentes.
+          </p>
+        </div>
+
+        <div class="card-grid" style="margin-bottom: 40px;" id="tools-software-grid">
+          <div class="glass-card" id="tool-python">
+            <h4 class="card-title">Python</h4>
+            <p class="card-desc">Lenguaje estándar de la ciencia de datos e IA por su versatilidad y soporte de librerías numéricas.</p>
+          </div>
+          <div class="glass-card" id="tool-tf">
+            <h4 class="card-title">TensorFlow &amp; TFLite</h4>
+            <p class="card-desc">Framework de producción con soporte especializado para microcontroladores (TensorFlow Lite for Microcontrollers).</p>
+          </div>
+          <div class="glass-card" id="tool-pytorch">
+            <h4 class="card-title">PyTorch</h4>
+            <p class="card-desc">Plataforma líder en investigación académica, diseño de grafos dinámicos y entrenamiento acelerado en GPU.</p>
+          </div>
+          <div class="glass-card" id="tool-sklearn">
+            <h4 class="card-title">Scikit-learn</h4>
+            <p class="card-desc">Librería de cabecera para algoritmos clásicos de regresión, árboles de decisión, clustering y preprocesamiento.</p>
+          </div>
+          <div class="glass-card" id="tool-pandas">
+            <h4 class="card-title">Pandas</h4>
+            <p class="card-desc">Manipulación estructurada de DataFrames para telemetría temporal de sensores y registros CSV.</p>
+          </div>
+          <div class="glass-card" id="tool-numpy">
+            <h4 class="card-title">NumPy</h4>
+            <p class="card-desc">Cálculo matricial y vectorial de alto rendimiento para procesamiento algebraico de señales.</p>
+          </div>
+          <div class="glass-card" id="tool-jupyter">
+            <h4 class="card-title">Jupyter Notebooks</h4>
+            <p class="card-desc">Entorno interactivo para experimentación rápida, prototipado matemático y documentación de modelos.</p>
+          </div>
+          <div class="glass-card" id="tool-sql">
+            <h4 class="card-title">SQL</h4>
+            <p class="card-desc">Consultas y almacenamiento de grandes volúmenes de eventos históricos de telemetría de sistemas embebidos.</p>
+          </div>
+          <div class="glass-card" id="tool-docker">
+            <h4 class="card-title">Docker</h4>
+            <p class="card-desc">Contenedores para empaquetado reproducible de pipelines de inferencia y despliegues en servidores de borde.</p>
+          </div>
+          <div class="glass-card" id="tool-cloud">
+            <h4 class="card-title">APIs y Cloud</h4>
+            <p class="card-desc">Servicios de nube para almacenamiento escalable, reentrenamiento masivo y orquestación MLOps.</p>
+          </div>
+        </div>
+
+        <!-- Fila especial: Del hardware al modelo -->
+        <h3 style="font-size: 1.2rem; color: var(--accent-orange-light); margin-bottom: 20px; font-family: var(--font-mono);">
+          [ 🔌 Del Hardware al Modelo: Plataformas de Ejecución ]
+        </h3>
+
+        <div class="card-grid" id="tools-hardware-grid">
+          <div class="glass-card" id="hw-arduino">
+            <h4 class="card-title">Arduino</h4>
+            <p class="card-desc">Plataforma prototipo para adquisición rápida de datos de sensores analógicos y pruebas preliminares.</p>
+          </div>
+          <div class="glass-card" id="hw-esp32">
+            <h4 class="card-title">ESP32</h4>
+            <p class="card-desc">Microcontrolador dual-core con Wi-Fi y Bluetooth ideal para nodos de inferencia IoT de bajo costo.</p>
+          </div>
+          <div class="glass-card" id="hw-rpi">
+            <h4 class="card-title">Raspberry Pi</h4>
+            <p class="card-desc">Computadora de placa única (SBC) para ejecución de modelos de visión artificial livianos en Linux embebido.</p>
+          </div>
+          <div class="glass-card" id="hw-mcu">
+            <h4 class="card-title">Microcontroladores (STM32 / PIC)</h4>
+            <p class="card-desc">Arquitecturas industriales con periféricos DMA y temporizadores de alta resolución para TinyML estricto.</p>
+          </div>
+          <div class="glass-card" id="hw-fpga">
+            <h4 class="card-title">FPGA</h4>
+            <p class="card-desc">Lógica reconfigurable en silicio para aceleración masiva en paralelo y latencias deterministas de microsegundos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECCIÓN 12: ÉTICA Y FUTURO
+         ========================================================= -->
+    <section class="section" id="etica-futuro">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-tag" id="badge-ethics">Responsabilidad Social y Técnica</span>
+          <h2 class="section-title" id="title-ethics">Ética y Futuro <span>de la IA</span></h2>
+          <p class="section-subtitle">
+            Reflexión equilibrada sobre los desafíos normativos, de seguridad humana y de transformación tecnológica.
+          </p>
+        </div>
+
+        <div class="card-grid" id="ethics-grid">
+          <article class="glass-card" id="eth-privacidad">
+            <h4 class="card-title">Privacidad en Sensores</h4>
+            <p class="card-desc">
+              La omnipresencia de micrófonos, cámaras y wearables exige técnicas como aprendizaje federado y procesamiento local (Edge AI) para evitar la filtración de datos sensibles a servidores externos.
+            </p>
+          </article>
+
+          <article class="glass-card" id="eth-sesgos">
+            <h4 class="card-title">Sesgos y Calibración</h4>
+            <p class="card-desc">
+              Un dataset de entrenamiento desbalanceado puede inducir al modelo a discriminar escenarios operacionales raros o poblaciones, generando diagnósticos erróneos en ingeniería y medicina.
+            </p>
+          </article>
+
+          <article class="glass-card" id="eth-seguridad">
+            <h4 class="card-title">Seguridad y Confiabilidad Crítica</h4>
+            <p class="card-desc">
+              En sistemas de control de aeronáutica, redes eléctricas o vehículos autónomos, una inferencia errónea tiene consecuencias físicas inmediatas. La certificación de modelos requiere validación formal estricta.
+            </p>
+          </article>
+
+          <article class="glass-card" id="eth-transparencia">
+            <h4 class="card-title">Transparencia y Explicabilidad (XAI)</h4>
+            <p class="card-desc">
+              Superar el paradigma de la "caja negra". En ingeniería electrónica es fundamental comprender por qué un modelo clasificó una señal como anomalía para diseñar protecciones de hardware acordes.
+            </p>
+          </article>
+
+          <article class="glass-card" id="eth-laboral">
+            <h4 class="card-title">Impacto Laboral y Transición</h4>
+            <p class="card-desc">
+              La automatización avanzada transforma el rol del ingeniero: del diseño manual repetitivo de circuitos hacia la supervisión de arquitecturas de IA, requiriendo actualización continua y formación ética.
+            </p>
+          </article>
+
+          <article class="glass-card" id="eth-futuro">
+            <h4 class="card-title">Futuro: Cómputo Neuromórfico</h4>
+            <p class="card-desc">
+              Hacia chips que emulan directamente los potenciales de acción biológicos (Spiking Neural Networks), logrando consumos energéticos de apenas unos microvatios en hardware electrónico de próxima generación.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECCIÓN 13: TERMINAL SIMULADA
+         ========================================================= -->
+    <section class="section" id="terminal">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-tag orange" id="badge-term">Consola Interactiva</span>
+          <h2 class="section-title" id="title-term">Terminal <span>del Laboratorio</span></h2>
+          <p class="section-subtitle">
+            Interactúa con el sistema mediante comandos de texto simulados inspirados en sistemas embebidos de tiempo real.
+          </p>
+        </div>
+
+        <div class="terminal-window" id="term-window">
+          <div class="terminal-bar">
+            <span class="term-dot red"></span>
+            <span class="term-dot yellow"></span>
+            <span class="term-dot green"></span>
+            <span class="terminal-title">neurocircuit-os v2.4.1 (arm-cortex-m4) — bash</span>
+          </div>
+
+          <div class="terminal-body" id="term-output" tabindex="0" aria-label="Pantalla de la terminal simulada">
+            <div class="term-output-line" style="color: var(--accent-purple-light);">
+========================================================================
+⚡ NEUROCIRCUIT LAB TERMINAL SUBSYSTEM - ENTORNO EDUCATIVO
+Arquitectura: ARM Cortex-M4 | Inferencia en Tiempo Real
+Escribe "<span style="color: var(--accent-orange); font-weight: bold;">help</span>" para ver los comandos disponibles.
+========================================================================
+            </div>
+          </div>
+
+          <div style="background: #0d0918; border-top: 1px solid var(--border-subtle); padding: 10px 16px;">
+            <div class="term-input-row">
+              <span class="term-prompt">neurocircuit@lab:~$</span>
+              <input type="text" id="term-input" class="term-input" autocomplete="off" spellcheck="false" placeholder="Escribe un comando (ej: help, ai.status, sensor.read)..." aria-label="Línea de entrada de comandos de la terminal">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECCIÓN 14: SOBRE MÍ
+         ========================================================= -->
+    <section class="section" id="sobre-mi">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-tag" id="badge-about">Perfil Académico</span>
+          <h2 class="section-title" id="title-about">Sobre <span>el Autor</span></h2>
+          <p class="section-subtitle">
+            Presentación y trayectoria académica.
+          </p>
+        </div>
+
+        <div class="author-card" id="author-card">
+          <div class="author-header">
+            <div class="author-avatar" aria-hidden="true">
+              SM
+            </div>
+            <div class="author-info">
+              <h3 id="author-name">Santo Miguel Coria Suma</h3>
+              <p id="author-bio-line">Ingeniero Electrónico • Investigador en IA, Machine Learning y Data Science</p>
+            </div>
+          </div>
+
+          <!-- Línea de tiempo simple -->
+          <div class="timeline" id="author-timeline">
+            <div class="timeline-item" id="timeline-upea">
+              <div class="timeline-dot"></div>
+              <h4 class="timeline-title">Ingeniería Electrónica – UPEA</h4>
+              <p class="timeline-desc">
+                Universidad Pública de El Alto (UPEA). Formación en la disciplina de la ingeniería electrónica.
+              </p>
+            </div>
+
+            <div class="timeline-item" id="timeline-maestria">
+              <div class="timeline-dot"></div>
+              <h4 class="timeline-title">Maestría en Inteligencia Artificial, Machine Learning y Data Science</h4>
+              <p class="timeline-desc">
+                Estudios de posgrado cursando la maestría enfocada en algoritmos de aprendizaje automático, ciencia de datos y sus aplicaciones tecnológicas.
+              </p>
+            </div>
+          </div>
+
+          <div style="border-top: 1px solid var(--border-subtle); padding-top: 20px;">
+            <h4 style="font-size: 0.95rem; color: var(--accent-orange-light); margin-bottom: 8px; font-family: var(--font-mono);">
+              Áreas de la carrera de Ingeniería Electrónica:
+            </h4>
+            
+            <!-- Marcadores de texto editables -->
+            <!-- AJUSTAR según la malla real de la carrera -->
+            <div class="tags-cloud" id="author-areas-tags">
+              <span class="area-tag">Circuitos</span>
+              <span class="area-tag">Electrónica analógica y digital</span>
+              <span class="area-tag">Microcontroladores y sistemas embebidos</span>
+              <span class="area-tag">Señales y sistemas</span>
+              <span class="area-tag">Control</span>
+              <span class="area-tag">Telecomunicaciones</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col-desc">
+          <a href="#inicio" class="brand-logo" style="margin-bottom: 12px; display: inline-flex;">
+            <span class="brand-icon">⚡</span>
+            <span class="brand-text">NEUROCIRCUIT<span>.LAB</span></span>
+          </a>
+          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+            Plataforma educativa dedicada a la convergencia entre la Inteligencia Artificial, el Machine Learning y la Ingeniería Electrónica.
+          </p>
+          <div style="margin-top: 12px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-purple-light);">
+            Autor: Santo Miguel Coria Suma
+          </div>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.95rem; color: var(--text-primary); margin-bottom: 12px; font-family: var(--font-mono);">
+            Enlaces y Contacto
+          </h4>
+          <div class="footer-social-links">
+            <a href="mailto:miguelstcors.etn@gmail.com" class="footer-btn" id="footer-link-mail" title="Enviar correo a Santo Miguel Coria Suma">
+              ✉ miguelstcors.etn@gmail.com
+            </a>
+            <a href="https://www.facebook.com/share/1KrWixC6Rj" target="_blank" rel="noopener noreferrer" class="footer-btn" id="footer-link-facebook" title="Perfil de Facebook del autor">
+              🌐 Facebook
+            </a>
+            <!-- REEMPLAZAR con la URL del repositorio -->
+            <a href="#" class="footer-btn" id="footer-link-github" title="Repositorio en GitHub">
+              📁 Repositorio GitHub
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.95rem; color: var(--text-primary); margin-bottom: 12px; font-family: var(--font-mono);">
+            Tecnologías
+          </h4>
+          <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">
+            HTML5 semántico • CSS3 con variables • JavaScript puro (ES6+)
+          </p>
+          <p style="font-size: 0.8rem; color: var(--accent-orange); margin-top: 6px;">
+            Sin frameworks, librerías externas ni dependencias CDN.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © 2026 NEUROCIRCUIT LAB — Santo Miguel Coria Suma. Desarrollado con fines exclusivamente educativos y de divulgación académica.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Principal de NeuroCircuit Lab (Vanilla JS) -->
+  <script src="./script.js"></script>
+</body>
+</html>
